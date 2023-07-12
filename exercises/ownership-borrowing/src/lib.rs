@@ -109,27 +109,22 @@ fn exercise7() {
 // Exercise 8
 // Make it compile
 fn exercise8() {
-    let mut accounting = vec!["Alice".to_string(), "Ben".to_string()];
+    let mut accounting = vec!["Alice", "Ben"];
 
     loop {
         let mut add_input = String::from("");
-
         io::stdin()
             .read_line(&mut add_input)
             .expect("Failed to read line");
 
-        let add_vec: Vec<String> = add_input
-            .trim()
-            .split_whitespace()
-            .map(String::from)
-            .collect();
+        let add_vec: Vec<&str> = add_input.trim().split_whitespace().collect();
 
         if add_vec.len() < 1 {
             println!("Incorrect input, try again");
             continue;
         }
 
-        let person = add_vec[0].clone();
+        let person = add_vec[0];
         accounting.push(person);
     }
 }
