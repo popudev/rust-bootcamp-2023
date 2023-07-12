@@ -1,4 +1,4 @@
-#![allow(unused)]
+#![allow(dead_code, unused)]
 // Exercise 1
 // Fix all errors
 fn sum(x: i32, y: i32) -> i32 {

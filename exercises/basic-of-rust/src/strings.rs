@@ -1,5 +1,6 @@
+#![allow(dead_code, unused)]
+
 // Exercise 1
-#[allow(dead_code)]
 fn exercise1(color: &str) -> String {
     color.to_string()
 }

@@ -1,3 +1,4 @@
+#![allow(dead_code, unused)]
 // Exercise 1
 // Fill in the blank and fix the errors
 // Make it compile
