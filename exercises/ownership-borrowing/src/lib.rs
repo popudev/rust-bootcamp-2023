@@ -1,3 +1,5 @@
+#![allow(dead_code, unused)]
+
 // Exercise 1
 // Make it compile
 fn exercise1() {
@@ -109,22 +111,23 @@ fn exercise7() {
 // Exercise 8
 // Make it compile
 fn exercise8() {
-    let mut accounting = vec!["Alice", "Ben"];
+    let mut accounting: Vec<String> = vec!["Alice".to_string(), "Ben".to_string()];
 
     loop {
-        let mut add_input = String::from("");
-        io::stdin()
+        let mut add_input = String::new(); // Create an empty String to store user input
+
+        io::stdin() // Use io::stdin() to read user input
             .read_line(&mut add_input)
             .expect("Failed to read line");
 
         let add_vec: Vec<&str> = add_input.trim().split_whitespace().collect();
 
-        if add_vec.len() < 1 {
+        if add_vec.is_empty() {
             println!("Incorrect input, try again");
             continue;
         }
 
-        let person = add_vec[0];
+        let person = add_vec[0].to_string(); // Convert the borrowed reference to an owned String
         accounting.push(person);
     }
 }
